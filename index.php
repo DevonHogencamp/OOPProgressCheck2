@@ -44,10 +44,11 @@
     <head>
         <meta charset="utf-8">
         <title>Blog</title>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css">
     </head>
     <body>
-        <div>
-            <h1>Make a Post</h1>
+        <div class="form">
+            <center><h1>Make a Post</h1></center>
             <form action="index.php" method="post">
                 <label for="name">Name: </label>
                 <input type="text" name="name">
@@ -68,56 +69,60 @@
             </form>
         </div>
 
-        <div>
+        <center>
             <h1>Posts</h1>
-
-            <div>
-                <?php foreach ($rows as $row): ?>
-
-                <h3>
-                    <?php
-                        echo $row['title'];
-                    ?>
-                </h3>
-
-                <p>
-                    <b>
-                         <?php
-                            echo $row['name'];
-                         ?>
-                    </b>
-                </p>
-
-                <p>
-                    <i>
+        </center>
+            <div class="container">
+            <?php foreach ($rows as $row): ?>
+                <div class="post">
+                    <h3>
+                        Title:
                         <?php
-                            echo $row['date'];
+                            echo $row['title'];
                         ?>
-                    </i>
-                </p>
+                    </h3>
 
-                <p>
-                    <?php
-                        echo $row['body'];
-                    ?>
-                </p>
+                    <p>
+                        <b>
+                            Name:
+                             <?php
+                                echo $row['name'];
+                             ?>
+                        </b>
+                    </p>
 
-                <p>
-                    <b>
-                        Tags:
+                    <p>
+                        Date:
+                        <i>
+                            <?php
+                                echo $row['date'];
+                            ?>
+                        </i>
+                    </p>
+
+                    <p>
+                        Body:
                         <?php
-                            echo $row['tag'];
+                            echo $row['body'];
                         ?>
-                    </b>
-                </p>
+                    </p>
 
-                <form action="index.php" method="post">
-                    <input type="hidden" name="deleteID" value="<?php echo $row['id']; ?>">
+                    <p>
+                        <b>
+                            Tags:
+                            <?php
+                                echo $row['tag'];
+                            ?>
+                        </b>
+                    </p>
 
-                    <input type="submit" name="delete" value="delete">
-                </form>
-                <?php endforeach ?>
-            </div>
+                    <form action="index.php" method="post">
+                        <input type="hidden" name="deleteID" value="<?php echo $row['id']; ?>">
+
+                        <input type="submit" name="delete" value="delete">
+                    </form>
+                </div>
+            <?php endforeach ?>
         </div>
     </body>
 </html>

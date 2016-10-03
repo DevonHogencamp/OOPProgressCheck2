@@ -1,0 +1,33 @@
+body {
+    background-color: #D3D3D3;
+    font-family: sans-serif;
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: #00CED1;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.container{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post{
+    margin: 2em;
+    background-color: #4B0082;
+    padding: 1em;
+    color: white;
+}
