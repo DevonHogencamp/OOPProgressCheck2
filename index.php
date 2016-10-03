@@ -26,22 +26,6 @@
         $database->bind(':tagName', $tag);
     }
 
-    if (@$_POST['update']) {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $title = $_POST['title'];
-        $body = $_POST['body'];
-        $tag = $_POST['tag'];
-
-        $database->query('UPDATE posts SET name = :name, email = :email, body = :body, tag = :tag WHERE title = :title');
-        $database->bind(':email', $email);
-        $database->bind(':name', $name);
-        $database->bind(':title', $title);
-        $database->bind(':body', $body);
-        $database->bind(':tag', $tag);
-        $database->execute();
-    }
-
     if (@$_POST['delete']) {
         $deleteID = $_POST['deleteID'];
 
@@ -81,26 +65,6 @@
                 <input type="text" name="tag" placeholder="Tag">
 
                 <input type="submit" name="post">
-            </form>
-
-            <h1>Update Post</h1>
-            <form action="index.php" method="post">
-                <label for="name">Name: </label>
-                <input type="text" name="name">
-
-                <label for="email">Email</label>
-                <input type="text" name="email">
-
-                <label for="title">Title: </label>
-                <input type="text" name="title" placeholder="Title">
-
-                <label for="body">Body: </label>
-                <input type="textarea" name="body" placeholder="Body">
-
-                <label for="tag">Tag: </label>
-                <input type="text" name="tag" placeholder="Tag">
-
-                <input type="submit" name="update">
             </form>
         </div>
 
