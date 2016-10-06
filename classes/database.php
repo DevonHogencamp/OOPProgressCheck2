@@ -1,9 +1,9 @@
 <?php
     class database {
         private $host = 'localhost';
-        private $user = 'root';
-        private $pass = 'root';
-        private $dbName = 'OOPBlog';
+        private $user = 'dhogencamp';
+        private $pass = 'LmAQ5E15';
+        private $dbName = 'dhogencamp';
 
         private $dbh;
         private $error;
